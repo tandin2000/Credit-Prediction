@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { MetricCard } from '../components/MetricCard';
 import { apiClient, MetaResponse, GlobalImportanceResponse, SchemaResponse } from '../api';
 
@@ -97,7 +97,6 @@ export const Bio: React.FC = () => {
     importance: item.importance
   })) || [];
 
-  const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6'];
 
   return (
     <div className="px-4 py-6 sm:px-0">
