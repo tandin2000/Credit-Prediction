@@ -1,0 +1,7 @@
+# This file ensures the artifacts directory is tracked by git
+# Place your model files here:
+# - best_regression_pipeline.joblib
+# - best_classification_pipeline.joblib
+# - final_regression_summary_train_test.csv (optional)
+# - final_classification_summary_train_test.csv (optional)
+# - Any PNG plots from Colab (optional)
