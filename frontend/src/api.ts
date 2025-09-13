@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
 
-// For production deployment, you'll need to set VITE_API_BASE to your Railway backend URL
-// Example: https://your-backend-app.railway.app
+// For production deployment, you'll need to set VITE_API_BASE to your Render backend URL
+// Example: https://credit-prediction-ql9y.onrender.com
 
 const api = axios.create({
   baseURL: API_BASE_URL,
