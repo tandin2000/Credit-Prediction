@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
+const API_BASE_URL = (import.meta as any).env?.VITE_API_BASE || 'http://localhost:8000';
 
 // For production deployment, you'll need to set VITE_API_BASE to your Render backend URL
 // Example: https://credit-prediction-ql9y.onrender.com

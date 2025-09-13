@@ -1,0 +1,3 @@
+# Render build configuration
+build_command: npm install && npm run build
+publish_directory: dist
