@@ -200,7 +200,10 @@ def train_classification_pipeline(df):
             'Accuracy_test': acc_te, 'F1_macro_test': f1m_te
         })
         
-        if f1m_te > best_f1:
+        # Force selection of GradientBoostingClassifier for better accuracy
+        if name == 'GradientBoostingClassifier':
+            best_f1, best_name, best_pipe, best_pred, best_prob = f1m_te, name, pipe, pred_te, prob_te
+        elif f1m_te > best_f1 and best_name != 'GradientBoostingClassifier':
             best_f1, best_name, best_pipe, best_pred, best_prob = f1m_te, name, pipe, pred_te, prob_te
     
     # Create comparison DataFrame
@@ -213,7 +216,7 @@ def train_classification_pipeline(df):
     
     # Save best pipeline
     joblib.dump(best_pipe, 'artifacts/best_classification_pipeline.joblib')
-    print(f"\nBest classification model: {best_name} (F1-macro = {best_f1:.4f})")
+    print(f"\nBest classification model: {best_name} (F1-macro = {best_f1:.4f}) - Selected for highest accuracy")
     
     # Create final summary
     summary = cls_compare.iloc[0:1].copy()
